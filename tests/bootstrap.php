@@ -15,8 +15,8 @@
 require __DIR__.'/../vendor/autoload.php';
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Events\Dispatcher;
+use Illuminate\Database\Eloquent\Model as Eloquent;
 
 /*
 |--------------------------------------------------------------------------
