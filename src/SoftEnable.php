@@ -161,4 +161,19 @@ trait SoftEnable
             $this->getEnabledColumn() => 'bool'
         ], parent::getCasts());
     }
+
+    /**
+     * Get the observable event names.
+     *
+     * @return array
+     */
+    public function getObservableEvents()
+    {
+        return array_merge(
+            [
+                'enabling', 'enabled', 'disabling', 'disabled',
+            ],
+            parent::getObservableEvents()
+        );
+    }
 }
