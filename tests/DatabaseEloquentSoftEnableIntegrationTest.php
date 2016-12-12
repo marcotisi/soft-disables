@@ -2,11 +2,11 @@
 
 use Illuminate\Database\Connection;
 use Illuminate\Pagination\Paginator;
+use MarcoTisi\SoftEnable\SoftEnable;
 use Illuminate\Database\Query\Builder;
+use MarcoTisi\SoftEnable\SoftEnablingScope;
 use Illuminate\Database\Capsule\Manager as DB;
 use Illuminate\Database\Eloquent\Model as Eloquent;
-use MarcoTisi\SoftEnable\SoftEnable;
-use MarcoTisi\SoftEnable\SoftEnablingScope;
 
 class DatabaseEloquentSoftEnableIntegrationTest extends PHPUnit_Framework_TestCase
 {
@@ -598,19 +598,19 @@ class DatabaseEloquentSoftEnableIntegrationTest extends PHPUnit_Framework_TestCa
             'disabled' => false,
         ];
 
-        SoftEnableTestUser::enabling(function() use (&$results) {
+        SoftEnableTestUser::enabling(function () use (&$results) {
             $results['enabling'] = true;
         });
 
-        SoftEnableTestUser::enabled(function() use (&$results) {
+        SoftEnableTestUser::enabled(function () use (&$results) {
             $results['enabled'] = true;
         });
 
-        SoftEnableTestUser::disabling(function() use (&$results) {
+        SoftEnableTestUser::disabling(function () use (&$results) {
             $results['disabling'] = true;
         });
 
-        SoftEnableTestUser::disabled(function() use (&$results) {
+        SoftEnableTestUser::disabled(function () use (&$results) {
             $results['disabled'] = true;
         });
 
@@ -631,7 +631,7 @@ class DatabaseEloquentSoftEnableIntegrationTest extends PHPUnit_Framework_TestCa
         SoftEnableTestUser::flushEventListeners();
         $this->createUsers();
 
-        SoftEnableTestUser::disabling(function() {
+        SoftEnableTestUser::disabling(function () {
             return false;
         });
 
@@ -647,7 +647,7 @@ class DatabaseEloquentSoftEnableIntegrationTest extends PHPUnit_Framework_TestCa
         SoftEnableTestUser::flushEventListeners();
         $this->createUsers();
 
-        SoftEnableTestUser::enabling(function() {
+        SoftEnableTestUser::enabling(function () {
             return false;
         });
 

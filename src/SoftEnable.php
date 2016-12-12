@@ -158,7 +158,7 @@ trait SoftEnable
     public function getCasts()
     {
         return array_merge([
-            $this->getEnabledColumn() => 'bool'
+            $this->getEnabledColumn() => 'bool',
         ], parent::getCasts());
     }
 
