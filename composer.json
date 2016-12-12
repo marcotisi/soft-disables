@@ -1,5 +1,5 @@
 {
-  "name": "marcotisi/soft-enables",
+  "name": "marcotisi/soft-enable",
   "type": "library",
   "require": {
     "php": ">=5.4"
@@ -20,12 +20,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "MarcoTisi\\SoftEnables": "src/"
+      "MarcoTisi\\SoftEnable\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "MarcoTisi\\SoftEnables\\Test\\": "tests"
+      "MarcoTisi\\SoftEnable\\Test\\": "tests"
     }
   }
 }

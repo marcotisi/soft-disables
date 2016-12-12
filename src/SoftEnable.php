@@ -1,15 +1,15 @@
 <?php
 
-namespace MarcoTisi\SoftEnables;
+namespace MarcoTisi\SoftEnable;
 
-trait SoftEnables
+trait SoftEnable
 {
     /**
      * Boot the soft enabling trait for a model.
      *
      * @return void
      */
-    public static function bootSoftEnables()
+    public static function bootSoftEnable()
     {
         static::addGlobalScope(new SoftEnablingScope);
     }
