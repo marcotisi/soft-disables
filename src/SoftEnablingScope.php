@@ -41,21 +41,6 @@ class SoftEnablingScope implements Scope
     }
 
     /**
-     * Get the "enabled" column for the builder.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $builder
-     * @return string
-     */
-    protected function getEnabledColumn(Builder $builder)
-    {
-        if (count($builder->getQuery()->joins) > 0) {
-            return $builder->getModel()->getQualifiedEnabledColumn();
-        }
-
-        return $builder->getModel()->getEnabledColumn();
-    }
-
-    /**
      * Add the enable extension to the builder.
      *
      * @param  \Illuminate\Database\Eloquent\Builder  $builder
@@ -106,7 +91,7 @@ class SoftEnablingScope implements Scope
      */
     protected function addWithoutDisabled(Builder $builder)
     {
-        $builder->macro('withoutTrashed', function (Builder $builder) {
+        $builder->macro('withoutDisabled', function (Builder $builder) {
             $model = $builder->getModel();
 
             $builder->withoutGlobalScope($this)->where(
