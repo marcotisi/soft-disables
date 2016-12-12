@@ -149,4 +149,16 @@ trait SoftEnable
     {
         return $this->getTable().'.'.$this->getEnabledColumn();
     }
+
+    /**
+     * Get the casts array.
+     *
+     * @return array
+     */
+    public function getCasts()
+    {
+        return array_merge([
+            $this->getEnabledColumn() => 'bool'
+        ], parent::getCasts());
+    }
 }
