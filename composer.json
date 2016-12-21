@@ -1,5 +1,6 @@
 {
   "name": "marcotisi/soft-enable",
+  "description": "SoftEnable is a Laravel package which lets you easily manage enabled and disabled model.",
   "keywords": [
     "laravel",
     "enable",
@@ -7,10 +8,6 @@
     "soft-enable",
     "trait"
   ],
-  "require-dev": {
-    "phpunit/phpunit": "~4.0",
-    "laravel/framework": "~5.2"
-  },
   "license": "MIT",
   "authors": [
     {
@@ -18,6 +15,12 @@
       "email": "marco.tisi@gmail.com"
     }
   ],
+  "require": {
+    "laravel/framework": "^5.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.7"
+  },
   "autoload": {
     "psr-4": {
       "MarcoTisi\\SoftEnable\\": "src/"
