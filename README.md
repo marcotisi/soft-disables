@@ -1,10 +1,7 @@
 SoftEnable
 ======
 SoftEnable is a Laravel package which lets you easily manage enabled and disabled model.
-
-## Disclaimer
-
-This package is a clone of the well known SoftDeletes trait. Tests and architecture have been heavily inspired by this great trait.
+This package is heavily inspired by Laravel's SoftDeletes Trait,
 
 ## Installation
 
@@ -52,7 +49,7 @@ class Post extends Model
 }
 ``` 
 
-You should also add the `enabled` column to your table. You can do it in your migration using the Laravel schema builder:
+You should also add the `enabled` column to the model's table. You can do it in your migration using the Laravel schema builder:
 
 ```php
 <?php
@@ -63,7 +60,8 @@ Schema::table('posts', function ($table) {
 ```
 
 Don't forget to add a default value, as trait won't do it for you!
-You can also change the column name, defining a constant in your model:
+
+If you want to use another name for the enabled column, just define the constant `ENABLED` in your model:
 
 ```php
 <?php
@@ -78,5 +76,49 @@ class Post extends Model
     use SoftEnable;
     
     const ENABLED = 'is_enabled';
+}
+```
+
+## Usage
+
+You can enable or disable a model by calling `enable` or `disable`.
+
+```php
+<?php
+// Enable the model
+Post::find(1)->enable();
+
+// Disable the model
+Post::find(1)->disable();
+```
+
+When a model is disabled, it will be excluded from any query result.
+To retrieve disabled models too, you can use the `withDisabled` method:
+
+```php
+<?php
+$posts = Post::withDisabled()->get();
+```
+
+You can also use the `withDisabled()` method on a relation:
+
+```php
+<?php
+$posts->comments()->withDisabled()->get();
+```
+
+To check if a retrieved model is enabled or disabled you can use the `isEnable` or `isDisable` methods.
+
+```php
+<?php
+if ($posts->first()->isEnabled()) {
+    // ...
+}
+```
+
+```php
+<?php
+if ($posts->first()->isDisabled()) {
+    // ...
 }
 ```
