@@ -1,5 +1,9 @@
 SoftEnable
 ======
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/marcotisi/soft-enable/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/marcotisi/soft-enable/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/marcotisi/soft-enable/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/marcotisi/soft-enable/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/marcotisi/soft-enable/badges/build.png?b=master)](https://scrutinizer-ci.com/g/marcotisi/soft-enable/build-status/master)
+
 SoftEnable is a Laravel package which lets you easily manage enabled and disabled model.
 This package is heavily inspired by Laravel's SoftDeletes Trait,
 
