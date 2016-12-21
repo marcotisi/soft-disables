@@ -29,3 +29,13 @@ tools:
     php_cpd:
         enabled: true
         excluded_dirs: [vendor, test]
+build:
+    tests:
+        override:
+            -
+                command: 'phpunit --coverage-clover=soft-enable.coverage'
+                coverage:
+                    file: 'soft-enable.coverage'
+                    format: 'clover'
+    environment:
+        php: '5.6.16'
